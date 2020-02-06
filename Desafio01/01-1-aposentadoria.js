@@ -5,19 +5,12 @@ const contribuicao = 50
 
 const calculoContribuicao = idade + contribuicao
 
-if (sexo === 'M') {
-    if (soma >= 95 && soma > 85) {
-        console.log(`${nome}, você pode se aposentar!`)
-    }
-    else {
-        console.log(`${nome}, você não pode se apostar!`)
-    }
+const homemPodeAposentar  = sexo === 'M' && contribuicao >= 35 && calculoContribuicao >= 95
+const mulherPodeAposentar = sexo === 'F' && contribuicao >= 30 && calculoContribuicao >= 85
+
+if (homemPodeAposentar || mulherPodeAposentar) {
+    console.log(`${nome}, você pode se aposentar!`)
 }
 else {
-    if (soma >= 85 && soma < 95) {
-        console.log(`${nome}, você pode se aposentar!`)
-    }
-    else {
-        console.log(`${nome}, você não pode se apostar!`)
-    }
+    console.log(`${nome}, você não pode se aposentar`)
 }
